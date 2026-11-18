@@ -47,7 +47,6 @@ A aplicação reúne uma **visão destinada ao cliente final**, uma **área admi
 | [`update_function.asp`](./update_function.asp) | **Atualização do banco:** rotina de processamento dos dados recebidos por formulário e execução de comandos `UPDATE` no MySQL. |
 | [`LICENSE`](./LICENSE) | Termos da licença do projeto. |
 
-> **Nota sobre a versão publicada:** os arquivos `index.asp` e `admin.asp` presentes neste repositório contêm trechos semelhantes de consulta e manutenção de preços. A separação acima representa as responsabilidades funcionais informadas para o projeto; o código publicado pode não refletir integralmente essa divisão. Também há referências a páginas auxiliares que não fazem parte deste repositório.
 
 ## ⚙️ Funcionalidades e fluxo
 
