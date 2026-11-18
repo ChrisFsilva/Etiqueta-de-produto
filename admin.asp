@@ -13,26 +13,6 @@ SetLocale(1046)
 <%
 	 Dim enable 
 	 enable = False	
-	 
-	If IsEmpty(Session("LOGGED")) Then
-		 ' Response.Write "A variável não existe."
-		 
-			Session("name") = ""
-			txtIP = Request.ServerVariables("REMOTE_ADDR")
-
-			if ( txtIP = "192.168.32.6") then Session("name") = "Admin" end if 
-			if ( txtIP = "192.168.0.90") then Session("name") = "Ronaldo" end if 
-			if ( txtIP = "192.168.0.55") then Session("name") = "Luciana" end if 
-			if ( txtIP = "192.168.0.202") then Session("name") = "Admin" end if 
-			if ( txtIP = "192.168.0.46") then Session("name") = "Jonatas" end if 
-		 
-	Else
-		If Session("LOGGED") = "On" Then
-			Update = true
-		Else
-			Response.Redirect("../login.asp")
-		End If		
-	End If
 
 	Dim strConnIntra, strConnQrcod, strConnStar
 	Dim connIntra, ConnStar, connQrcod
@@ -49,7 +29,7 @@ SetLocale(1046)
 	produto = trim(Request("produto"))	
 	contador = 0
 	
-	strConnIntra = "Provider=SQLOLEDB;Data Source=192.168.0.202;Initial Catalog=intranet;User ID=readonlyuser;Password=28bw03az23!!;"
+	strConnIntra = "Provider=SQLOLEDB.1;Data Source=banco_erp;Initial Catalog=banco_erp;User ID=readonlyuser;Password=senha_erp;"
 	' strConnQrcod = "Driver={MySQL ODBC 9.6 Unicode Driver};Server=endereço_servidor;Database=nome_banco;User=user_banco;Password=senha_banco;"
 	strConnQrcod = "Driver={MySQL ODBC 26.7 Unicode Driver};Server=endereço_servidor;Database=nome_banco;User=user_banco;Password=senha_banco;"
 	strConnStar = "Provider=SQLOLEDB.1;Data Source=banco_erp;Initial Catalog=banco_erp;User ID=readonlyuser;Password=senha_erp;"
