@@ -14,26 +14,6 @@ SetLocale(1046)
 	 Dim enable 
 	 enable = False	
 	 
-	If IsEmpty(Session("LOGGED")) Then
-		 ' Response.Write "A variável não existe."
-		 
-			Session("name") = ""
-			txtIP = Request.ServerVariables("REMOTE_ADDR")
-
-			if ( txtIP = "192.168.32.6") then Session("name") = "Admin" end if 
-			if ( txtIP = "192.168.0.90") then Session("name") = "Ronaldo" end if 
-			if ( txtIP = "192.168.0.55") then Session("name") = "Luciana" end if 
-			if ( txtIP = "192.168.0.202") then Session("name") = "Admin" end if 
-			if ( txtIP = "192.168.0.46") then Session("name") = "Jonatas" end if 
-		 
-	Else
-		If Session("LOGGED") = "On" Then
-			Update = true
-		Else
-			Response.Redirect("../login.asp")
-		End If		
-	End If
-
 	Dim strConnIntra, strConnQrcod, strConnStar
 	Dim connIntra, ConnStar, connQrcod
 	Dim search, etiqueta, fornecedor, produto, queryMySql, CODFORNECEDOR, rs, rsStar, rsIntranet, strSQL1
@@ -49,10 +29,10 @@ SetLocale(1046)
 	produto = trim(Request("produto"))	
 	contador = 0
 	
-	strConnIntra = "Provider=SQLOLEDB;Data Source=192.168.0.202;Initial Catalog=intranet;User ID=readonlyuser;Password=28bw03az23!!;"
-	' strConnQrcod = "Driver={MySQL ODBC 9.6 Unicode Driver};Server=qrcode_linux.mysql.dbaas.com.br;Database=qrcode_linux;User=qrcode_linux;Password=TI@Br3ntw00d;"
-	strConnQrcod = "Driver={MySQL ODBC 26.7 Unicode Driver};Server=qrcode_linux.mysql.dbaas.com.br;Database=qrcode_linux;User=qrcode_linux;Password=TI@Br3ntw00d;"
-	strConnStar = "Provider=SQLOLEDB.1;Data Source=192.168.32.37;Initial Catalog=StarSoftV2025;User ID=readonlyuser;Password=28bw03az23!!;"
+	strConnIntra = "Provider=SQLOLEDB.1;Data Source=endereço_ERP;Initial Catalog=banco_ERP;User ID=readonlyuser;Password=Senha_ERP;"
+	' strConnQrcod = "Driver={MySQL ODBC 9.6 Unicode Driver};Server=info_banco.mysql.dbaas.com.br;Database=info_banco;User=info_banco;password_banco;"
+	strConnQrcod = "Driver={MySQL ODBC 26.7 Unicode Driver};Server=info_banco.mysql.dbaas.com.br;Database=info_banco;User=info_banco;password_banco;"
+	strConnStar = "Provider=SQLOLEDB.1;Data Source=endereço_ERP;Initial Catalog=banco_ERP;User ID=readonlyuser;Password=Senha_ERP;"
 	  
 	Set connIntra = Server.CreateObject("ADODB.Connection")
 	Set ConnStar = Server.CreateObject("ADODB.Connection")
@@ -526,6 +506,11 @@ SetLocale(1046)
 			
 		</div>
 	</div>	
+	
+
+
+</body></html>
+
 	
 
 
